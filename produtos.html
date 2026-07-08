@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - MekaByte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 shadow w-100">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-info" href="home.html">🌐 MekaByte</a>
+            <a href="home.html" class="btn btn-sm btn-outline-info">Voltar à Home</a>
+        </div>
+    </nav>
+
+    <main class="container mb-5 flex-grow-1 d-flex flex-column justify-content-center">
+        <!-- Formulário Centralizado -->
+        <div class="row justify-content-center mb-4 w-100 m-0">
+            <div class="col-md-6">
+                <div class="card shadow p-4">
+                    <h4 class="fw-bold mb-3 text-center text-dark">Cadastrar Produto</h4>
+                    
+                    <div id="mensagemProduto" class="alert d-none" role="alert"></div>
+
+                    <form id="formProduto" novalidate>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="nomeProduto" placeholder="Ex: Placa de Vídeo RTX, SSD 1TB..." required>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button type="submit" class="btn btn-info flex-grow-1 fw-bold">➕ Cadastrar</button>
+                            <button type="button" id="btnExcluir" class="btn btn-danger">🗑️ Excluir Último</button>
+                            <button type="button" id="btnOrdenar" class="btn btn-secondary">🔤 Ordenar A-Z</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de Listagem -->
+        <div class="row justify-content-center w-100 m-0">
+            <div class="col-md-8">
+                <div class="p-3 bg-dark text-white rounded shadow-sm d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="m-0">Inventário de Informática</h5>
+                    <span class="badge bg-info text-dark fs-6" id="contadorProdutos">Cadastrados: 0</span>
+                </div>
+                
+                <ul class="list-group shadow-sm" id="listaProdutos">
+                    <!-- Preenchido dinamicamente via JS -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white-50 text-center py-3 mt-auto w-100">
+        <small>&copy; 2026 MekaByte. Todos os direitos reservados.</small>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

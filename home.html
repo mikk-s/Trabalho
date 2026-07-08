@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - MekaByte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Header com botões de navegação exigidos -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow w-100">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-info" href="home.html">🌐 MekaByte</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link disabled" href="#">Visão Geral</a></li>
+                    <li class="nav-item"><a class="nav-link disabled" href="#">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold text-info" href="produtos.html">⚙️ Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" onclick="localStorage.removeItem('usuarioLogado')">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Apresentando a Empresa -->
+    <main class="container my-auto py-5">
+        <div class="p-5 mb-4 bg-dark text-white rounded-3 shadow-sm">
+            <div class="container-fluid py-3">
+                <!-- Mensagem de Boas-vindas Dinâmica -->
+                <h1 class="display-5 fw-bold text-info" id="boasVindas">Olá, Usuário!</h1>
+                <p class="col-md-8 fs-4 text-white-50">Seja bem-vindo à MekaByte. Somos especialistas em infraestrutura de TI, montagem de computadores de alta performance e fornecimento de periféricos tecnológicos de ponta.</p>
+            </div>
+        </div>
+
+        <div class="row align-items-stretch">
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-4 bg-white border rounded-3 shadow-sm">
+                    <h3>Nossa Identidade</h3>
+                    <p class="text-muted">Focada no ramo de informática e hardware, a MekaByte traz inovação com cores e estrutura moderna para gerenciar o estoque digital de forma prática.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-4 bg-white border rounded-3 shadow-sm">
+                    <h3>Gerenciador do Sistema</h3>
+                    <p class="text-muted">Utilize nosso módulo de produtos para listar novos hardwares, organizar o inventário em ordem alfabética ou remover os últimos registros.</p>
+                    <a href="produtos.html" class="btn btn-outline-dark">Acessar Produtos</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white-50 text-center py-3 mt-auto w-100">
+        <small>&copy; 2026 MekaByte. Todos os direitos reservados.</small>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
