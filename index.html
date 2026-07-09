@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MekaByte</title>
+    <title>MekaByte - Loja</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,19 +19,29 @@
         </div>
     </nav>
 
-    <main class="container d-flex justify-content-center align-items-center flex-grow-1 text-center w-100">
-        <div class="row justify-content-center w-0">
-            <div class="col-md-8">
-                <h1 class="display-4 fw-bold mb-4">Bem-vindo à <span class="text-info">MekaByte</span></h1>
-                <p class="lead text-muted mb-5">
-                    A evolução do seu ecossistema digital começa aqui. Gerencie seus produtos, integre suas ideias e impulsione seu negócio com a nossa plataforma.
-                </p>
-                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                    <a href="login.html" class="btn btn-dark btn-lg px-4 gap-3">Acessar Minha Conta</a>
-                    <a href="cadastro.html" class="btn btn-outline-secondary btn-lg px-4">Criar Novo Cadastro</a>
+    <header class="bg-dark text-white text-center py-5 mb-4">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Bem-vindo à <span class="text-info">MekaByte</span></h1>
+            <p class="lead text-white-50">A evolução do seu ecossistema digital começa aqui. Confira nossa vitrine de produtos.</p>
+        </div>
+    </header>
+
+    <main class="container flex-grow-1 mb-5">
+        
+        <div id="avisoLojaVazia" class="text-center py-5 d-none">
+            <div class="card p-5 shadow-sm border-0 mx-auto" style="max-width: 600px; border-radius: 12px;">
+                <h3 class="fw-bold text-muted mb-3">Nenhum produto em estoque 📦</h3>
+                <p class="text-muted mb-4">No momento, nosso catálogo está passando por uma atualização. Faça login ou cadastre-se para gerenciar o inventário!</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="login.html" class="btn btn-dark px-4">Acessar Minha Conta</a>
+                    <a href="cadastro.html" class="btn btn-outline-secondary px-4">Criar Novo Cadastro</a>
                 </div>
             </div>
         </div>
+
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4" id="vitrineProdutos">
+            </div>
+
     </main>
 
     <footer class="bg-dark text-white-50 text-center py-3 mt-auto w-100">
@@ -39,5 +49,47 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const vitrine = document.getElementById('vitrineProdutos');
+            const avisoVazio = document.getElementById('avisoLojaVazia');
+
+            // Recupera o mesmo Array de produtos usado nas outras telas do sistema
+            const arrayProdutos = JSON.parse(localStorage.getItem('produtosSalvos')) || [];
+
+            // Se não houver produtos cadastrados, exibe o aviso genérico
+            if (arrayProdutos.length === 0) {
+                avisoVazio.classList.remove('d-none');
+                return;
+            }
+
+            // Caso existam produtos, renderiza um card moderno para cada um deles
+            arrayProdutos.forEach((nomeProduto, index) => {
+                const col = document.createElement('div');
+                col.className = 'col';
+
+                // Gera uma foto de hardware aleatória do Unsplash baseada no índice para não repetir todas iguais
+                const urlImagemAleatoria = `https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=500&q=80&sig=${index}`;
+
+                col.innerHTML = `
+                    <div class="card h-100 shadow-sm border-0" style="border-radius: 12px; overflow: hidden;">
+                        <img src="${urlImagemAleatoria}" class="card-img-top" alt="Hardware" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title fw-bold text-dark text-truncate">${nomeProduto}</h5>
+                                <p class="card-text text-muted small">Dispositivo tecnológico de alta performance testado e revisado pela equipe MekaByte.</p>
+                            </div>
+                            <div class="mt-3">
+                                <span class="badge bg-success mb-2 fs-6">Disponível</span>
+                                <button class="btn btn-dark btn-sm w-100 fw-bold text-white">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                vitrine.appendChild(col);
+            });
+        });
+    </script>
 </body>
 </html>

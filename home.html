@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - MekaByte</title>
+    <title>Painel E-commerce - MekaByte</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
 
-    <!-- Header com botões de navegação exigidos -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow w-100">
         <div class="container">
             <a class="navbar-brand fw-bold text-info" href="home.html">🌐 MekaByte</a>
@@ -19,38 +18,62 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link disabled" href="#">Visão Geral</a></li>
-                    <li class="nav-item"><a class="nav-link disabled" href="#">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link  fw-bold" href="produtos.html">⚙️ Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link disabled" href="#">Vendas</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="produtos.html">⚙️ Catálogo</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html" onclick="localStorage.removeItem('usuarioLogado')">Sair</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Conteúdo Apresentando a Empresa -->
     <main class="container my-auto py-5">
         <div class="p-5 mb-4 bg-dark text-white rounded-3 shadow-sm">
             <div class="container-fluid py-3">
-                <!-- Mensagem de Boas-vindas Dinâmica -->
                 <h1 class="display-5 fw-bold text-info" id="boasVindas">Olá, Usuário!</h1>
-                <p class="col-md-8 fs-4 text-white-50">Seja bem-vindo à MekaByte. Somos especialistas em infraestrutura de TI, montagem de computadores de alta performance e fornecimento de periféricos tecnológicos de ponta.</p>
+                <p class="col-md-8 fs-4 text-white-50">Bem-vindo ao Painel de Controle da sua Loja Virtual. Aqui você monitora o desempenho de hardware, gerencia o estoque em tempo real e acompanha os pedidos da MekaByte.</p>
             </div>
         </div>
 
         <div class="row align-items-stretch">
+            
             <div class="col-md-6 mb-4">
-                <div class="h-100 p-4 bg-white border rounded-3 shadow-sm">
-                    <h3>Nossa Identidade</h3>
-                    <p class="text-muted">Focada no ramo de informática e hardware, a MekaByte traz inovação com cores e estrutura moderna para gerenciar o estoque digital de forma prática.</p>
+                <div class="h-100 p-4 bg-white border rounded-3 shadow-sm d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="text-dark">📦 Gestão de Produtos</h3>
+                        <p class="text-muted">Utilize o nosso módulo exclusivo para cadastrar novos componentes, atualizar preços, remover itens descontinuados e organizar a vitrine da loja virtual em ordem alfabética.</p>
+                    </div>
+                    <div class="mt-3">
+                        <a href="produtos.html" class="btn btn-outline-dark">Acessar Catálogo</a>
+                    </div>
                 </div>
             </div>
+
             <div class="col-md-6 mb-4">
                 <div class="h-100 p-4 bg-white border rounded-3 shadow-sm">
-                    <h3>Gerenciador do Sistema</h3>
-                    <p class="text-muted">Utilize nosso módulo de produtos para listar novos hardwares, organizar o inventário em ordem alfabética ou remover os últimos registros.</p>
-                    <a href="produtos.html" class="btn btn-outline-dark">Acessar Produtos</a>
+                    <h3 class="text-dark">💰 Desempenho Comercial</h3>
+                    <p class="text-muted">Acompanhe a taxa de conversão e o faturamento bruto dos hardwares mais vendidos no mês. Mantenha os seus produtos atualizados para atrair mais clientes.</p>
+                    <hr class="text-muted">
+                    <div class="d-flex justify-content-between text-muted small">
+                        <span>Pedidos Hoje: <strong>14</strong></span>
+                        <span>Ticket Médio: <strong>R$ 1.250,00</strong></span>
+                    </div>
                 </div>
             </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-4 bg-white border rounded-3 shadow-sm">
+                    <h3 class="text-dark">🚚 Logística e Envios</h3>
+                    <p class="text-muted">Monitore os produtos de informática que estão aguardando despacho, mercadorias em trânsito e controle as transportadoras parceiras da MekaByte.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-4 bg-white border rounded-3 shadow-sm">
+                    <h3 class="text-dark">💬 Central do Cliente</h3>
+                    <p class="text-muted">Visualize avaliações da loja, responda a perguntas sobre compatibilidade de peças e gerencie solicitações de garantia ou devolução.</p>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -60,4 +83,4 @@
 
     <script src="js/script.js"></script>
 </body>
-</html>>
+</html>

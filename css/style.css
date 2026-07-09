@@ -1,22 +1,22 @@
 /* Customizações da MekaByte */
 .text-info {
-    color: #0dcaf0 !important;
+    color: #770df0 !important;
 }
 
 .btn-info {
-    background-color: #0dcaf0;
-    border-color: #0dcaf0;
-    color: #111;
+    background-color: #770df0;
+    border-color: #770df0;
+    color: #fff;
 }
 
 .btn-info:hover {
-    background-color: #0baccc;
-    border-color: #0baccc;
-    color: #111;
+    background-color: #a45ef5;
+    border-color: #a45ef5;
+    color: #fff;
 }
 
 /* Garante o foco visual padrão do Bootstrap com a nossa paleta */
 .form-control:focus {
-    border-color: #0dcaf0;
-    box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+    border-color: #770df0;
+    box-shadow: 0 0 0 0.25rem rgba(116, 18, 245, 0.25);
 }

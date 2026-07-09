@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!regexEspecial.test(senha)) {
                 exibirMensagem(mensagem, 'A senha precisa de pelo menos um caractere especial!', 'danger');
                 return;
+            } else if (senha.length < 8) {
+                exibirMensagem(mensagem, 'A senha precisa ter no mínimo 8 caracteres!', 'danger');
+                return;
             }
 
             // Armazena temporariamente para simular banco de dados
@@ -29,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             setTimeout(() => {
                 window.location.href = 'login.html';
-            }, 2000);
+            }, 1000);
         });
     }
 
@@ -54,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 exibirMensagem(mensagem, 'Autenticado com sucesso!', 'success');
                 setTimeout(() => {
                     window.location.href = 'home.html';
-                }, 1500);
+                }, 1000);
             } else {
                 exibirMensagem(mensagem, 'Usuário ou senha inválidos.', 'danger');
             }
